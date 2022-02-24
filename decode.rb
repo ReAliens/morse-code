@@ -21,5 +21,15 @@ def decode_word(coded_word)
   actual_word
 end
 
+def decode_msg(input_msg)
+  msg = []
+  input_msg.split('   ').each do |word|
+    msg.push(decode_word(word))
+  end
+  msg.join(' ')
+end
+
 puts decode_char('.-')
 puts decode_word('-- -.--')
+puts decode_msg('-- -.--   -. .- -- .')
+puts decode_msg('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
